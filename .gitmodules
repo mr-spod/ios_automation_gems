@@ -13,3 +13,6 @@
 [submodule "pamphlet"]
 	path = pamphlet
 	url = git@gitlab.duethealth.com:sean.odonnell/pamphlet.git
+[submodule "archiver"]
+	path = archiver
+	url = git@gitlab.duethealth.com:sean.odonnell/builder.git
