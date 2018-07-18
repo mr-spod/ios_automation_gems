@@ -3,11 +3,11 @@ require 'xcodeproj'
 require 'fastlane'
 require 'json'
 require 'string-eater'
-require_relative 'sources/config.rb'
-require_relative 'sources/buildMode.rb'
-require_relative 'sources/plist.rb'
-require_relative 'sources/entitlements.rb'
-require_relative 'sources/messenger.rb'
+require_relative 'pamphlet/config.rb'
+require_relative 'pamphlet/buildMode.rb'
+require_relative 'pamphlet/plist.rb'
+require_relative 'pamphlet/entitlements.rb'
+require_relative 'pamphlet/messenger.rb'
 
 class Pamphlet
   include Singleton

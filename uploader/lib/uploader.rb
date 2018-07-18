@@ -1,5 +1,5 @@
 require 'pamphlet'
-require_relative 'sources/fastlaneHelper.rb'
+require_relative 'uploader/fastlaneHelper.rb'
 
 class Uploader
   def self.uploadToBuildServer(scheme, mode)

@@ -1,4 +1,4 @@
-require_relative 'sources/fastlaneHelper.rb'
+require_relative 'tester/fastlaneHelper.rb'
 
 class Tester
 

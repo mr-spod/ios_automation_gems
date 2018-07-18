@@ -1,4 +1,4 @@
-require_relative 'sources/fastlaneHelper.rb'
+require_relative 'archiver/fastlaneHelper.rb'
 #empty class
 
 class Archiver

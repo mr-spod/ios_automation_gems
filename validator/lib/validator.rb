@@ -2,10 +2,10 @@ require 'pamphlet'
 require 'xcodeproj'
 require 'fastimage'
 require 'fastlane'
-require_relative 'sources/fastlaneHelper.rb'
-require_relative 'sources/validAPI.rb'
-require_relative 'sources/validPlist.rb'
-require_relative 'sources/validPamphlet.rb'
+require_relative 'validator/fastlaneHelper.rb'
+require_relative 'validator/validAPI.rb'
+require_relative 'validator/validPlist.rb'
+require_relative 'validator/validPamphlet.rb'
 
 class Validator
   def self.validate(scheme, args)
