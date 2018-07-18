@@ -9,9 +9,6 @@ require_relative 'validator/validPamphlet.rb'
 
 class Validator
   def self.validate(scheme, args)
-    5.times do
-      Fastlane::UI.success "HEY! You got the newest change to validator!!!"
-    end
     Fastlane::UI.message "Validating..."
     pam = Pamphlet.instance
 
