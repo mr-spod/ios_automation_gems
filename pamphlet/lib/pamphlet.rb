@@ -30,6 +30,9 @@ class Pamphlet
   attr_reader :allSchemes
 
   def initialize
+    5.times do
+      Fastlane::UI.success "HEY! You got the newest change to pamphlet!!!"
+    end
     @configHash = Hash.new
     @plistHash = Hash.new
     @entitlementsHash = Hash.new

@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.description	= "Ruby gem that extracts automation information from a Duet iOS project."
   s.authors	= ["Sean O'Donnnell"]
   s.email	= 'info@duethealth.com'
-  s.files	= Dir['Rakefile', 'pamphlet/{bin,lib}/**/*', 'README*']
+  s.files	= Dir['Rakefile', '{bin,lib}/**/*', 'README*']
   s.license	= 'MIT'
 
   s.add_runtime_dependency "xcodeproj"

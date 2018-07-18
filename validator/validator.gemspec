@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.description	= "Ruby gem that validates the contents of an iOS application project for deployment."
   s.authors	= ["Sean O'Donnnell"]
   s.email	= 'info@duethealth.com'
-  s.files	= Dir['Rakefile', 'validator/{bin,lib}/**/*', 'README*']
+  s.files	= Dir['Rakefile', '{bin,lib}/**/*', 'README*']
   s.license	= 'MIT'
 
   s.add_runtime_dependency "pamphlet"

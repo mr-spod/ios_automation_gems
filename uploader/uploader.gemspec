@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.description	= "Ruby gem that uploads a Duet iOS project to our build servers."
   s.authors	= ["Sean O'Donnnell"]
   s.email	= 'info@duethealth.com'
-  s.files	= Dir['Rakefile', 'uploader/{bin,lib}/**/*', 'README*']
+  s.files	= Dir['Rakefile', '{bin,lib}/**/*', 'README*']
   s.license	= 'MIT'
 
   s.add_runtime_dependency "fastlane"
