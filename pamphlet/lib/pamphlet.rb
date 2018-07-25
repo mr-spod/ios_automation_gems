@@ -37,8 +37,6 @@ class Pamphlet
     @iconsPathHash = Hash.new
     @allSchemes = []
     @crashlyticsNotifications = true
-
-    Fastlane::UI.important "SUCCESS: downloaded updated version of pamphlet - 0.3.4"
   end
 
   def setNurvDetails(details)
@@ -128,8 +126,6 @@ class Pamphlet
       end
     end
     readSchemeArgs(scheme, options)
-    puts "End of tokenize args:"
-    puts JSON.pretty_generate options
     return options
   end
 
