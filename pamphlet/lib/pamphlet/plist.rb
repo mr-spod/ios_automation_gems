@@ -39,6 +39,7 @@ class PropertyList
   def restoreBuildNumber
     @plist[BUILD_NUM_KEY] = @initialBuildNumber
     writePlist
+    @initialBuildNumber
   end
 
   ## This method overwrites the plist with the staging build number, returned to be used in ipa filename
@@ -62,5 +63,6 @@ class PropertyList
     end
     @plist[BUILD_NUM_KEY] = newNum
     writePlist
+    newNum
   end
 end
