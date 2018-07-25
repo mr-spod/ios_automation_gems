@@ -38,7 +38,7 @@ class Pamphlet
     @allSchemes = []
     @crashlyticsNotifications = true
 
-    Fastlane::UI.important "SUCCESS: downloaded updated version of pamphlet - 0.3.1"
+    Fastlane::UI.important "SUCCESS: downloaded updated version of pamphlet - 0.3.4"
   end
 
   def setNurvDetails(details)
