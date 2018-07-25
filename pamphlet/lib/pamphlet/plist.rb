@@ -44,10 +44,11 @@ class PropertyList
   ## This method overwrites the plist with the staging build number, returned to be used in ipa filename
   def bumpBuildNumber(full = false)
     current = @plist[BUILD_NUM_KEY]
+    newNum = current
     major, minor = current.split('.').map { |component| component.to_i }
     if full
       newNum = "#{major + 1}.0"
-    else
+    elsif minor
       case minor
       when 0
         newNum = "#{major}.1"
@@ -56,6 +57,8 @@ class PropertyList
       else
         Fastlane::UI.error "Unexpected build number #{current}. Please manually adjust the number and retry."
       end
+    else
+      Fastlane::UI.error "Unexpected build number #{current}. Please manually adjust the number and retry."
     end
     @plist[BUILD_NUM_KEY] = newNum
     writePlist
