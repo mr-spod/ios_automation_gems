@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
 
   s.name	= 'pamphlet'
-  s.version	= '0.3.0'
+  s.version	= '0.3.1'
   s.date	= '2018-06-13'
   s.summary	= "Duet Health internal iOS automation info tool"
   s.description	= "Ruby gem that extracts automation information from a Duet iOS project."

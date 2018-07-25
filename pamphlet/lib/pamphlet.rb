@@ -37,6 +37,8 @@ class Pamphlet
     @iconsPathHash = Hash.new
     @allSchemes = []
     @crashlyticsNotifications = true
+
+    Fastlane::UI.important "SUCCESS: downloaded updated version of pamphlet - 0.3.1"
   end
 
   def setNurvDetails(details)
