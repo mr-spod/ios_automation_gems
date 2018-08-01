@@ -4,13 +4,15 @@ require 'pamphlet'
 module CrashlyticsWrapper
   module_function
 
-  def uploadToCrashlytics(mode)
+  def uploadToCrashlytics(mode, args)
     pam = Pamphlet.instance
+    groups = pam.crashlyticsGroups
+    groups << args[:testers] if args[:testers] != nil
     begin
       crashlytics(
         api_token: pam.crashlyticsToken,
         build_secret: pam.crashlyticsSecret,
-        groups: pam.crashlyticsGroups,
+        groups: groups,
         notifications: true,
         notes: "#{pam.sourcePath} Client Build - #{mode}"
       )
