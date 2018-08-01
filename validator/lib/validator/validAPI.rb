@@ -3,28 +3,27 @@ require 'fastlane'
 
 class APIValidator
 
-  def initialize(scheme, stagingSuffix = nil)
+  def initialize(scheme, apiVersion, stagingSuffix = nil)
     @scheme = scheme
     @stagingSuffix = stagingSuffix
     @configObject = Pamphlet.instance.configHash[scheme]
     @messenger = Pamphlet.instance.messenger
     @sharedPatterns = [[/^https/, "URL is not https"]]
-    readConfigURLs
+    readConfigURLs(apiVersion)
   end
 
-  def readConfigURLs
+  def readConfigURLs(apiVersion)
     config = @configObject.config
-    apiExtension = config["api_extension"]
     if @configObject.usesEnvironments
       stagingURL = config["environments"][1]["url"]
       productionURL = config["environments"][0]["url"]
-      @stagingAPI = "#{stagingURL}/#{apiExtension}"
-      @productionAPI = "#{productionURL}/#{apiExtension}"
+      @stagingAPI = "#{stagingURL}/#{apiVersion}"
+      @productionAPI = "#{productionURL}/#{apiVersion}"
     else
       @stagingAPI = config["staging_url"]
       @productionAPI = config["production_url"]
-      extensionRegex = Regexp.new "#{apiExtension.chomp('/')}$"
-      @sharedPatterns << [extensionRegex, "API level does not match config[:api_extension] -- #{apiExtension}"]
+      extensionRegex = Regexp.new "#{apiVersion.chomp('/')}$"
+      @sharedPatterns << [extensionRegex, "API level does not match API version in Fastfile -- #{apiVersion}"]
     end
   end
 

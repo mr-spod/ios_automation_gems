@@ -43,9 +43,9 @@ class Validator
     unless args[:skip_api_validation]
       Fastlane::UI.command "API Validation"
       stagingSuffix = args[:staging_suffix]
-      apiValidator = APIValidator.new(scheme, stagingSuffix)
+      apiValidator = APIValidator.new(scheme, args["api_version"], stagingSuffix)
       apiValidator.validateAPIRegex
-      apiValidator.validateAPIPing
+      apiValidator.validateAPIPing()
       Fastlane::UI.message "Finished api validation"
     end
 
