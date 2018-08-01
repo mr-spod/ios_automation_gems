@@ -3,6 +3,7 @@ require 'pamphlet'
 class ValidPamphlet
 
   def self.validate(pamphlet)
+    raise "Pamphlet api version extension has not been set" unless pamphlet.apiVersion
     raise "Pamphlet crashlytics token has not been set" unless pamphlet.crashlyticsToken
     raise "Pamphlet crashlytics secret has not been set" unless pamphlet.crashlyticsSecret
     raise "Pamphlet deployment groups array has not been set" unless pamphlet.crashlyticsGroups

@@ -11,7 +11,7 @@ module CrashlyticsWrapper
         api_token: pam.crashlyticsToken,
         build_secret: pam.crashlyticsSecret,
         groups: pam.crashlyticsGroups,
-        notifications: pam.crashlyticsNotifications,
+        notifications: true,
         notes: "#{pam.sourcePath} Client Build - #{mode}"
       )
       message = "Successfully uploaded #{mode} build to Crashlytics"

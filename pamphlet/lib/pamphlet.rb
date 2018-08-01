@@ -14,6 +14,7 @@ class Pamphlet
 
   attr_accessor :projectPath
   attr_accessor :sourcePath
+  attr_accessor :apiVersion
   attr_accessor :crashlyticsSecret
   attr_accessor :crashlyticsToken
   attr_accessor :crashlyticsGroups
@@ -36,7 +37,6 @@ class Pamphlet
     @ipaFileNamesHash = Hash.new
     @iconsPathHash = Hash.new
     @allSchemes = []
-    @crashlyticsNotifications = true
   end
 
   def setNurvDetails(details)
