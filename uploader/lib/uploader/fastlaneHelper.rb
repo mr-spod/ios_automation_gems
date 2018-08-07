@@ -1,4 +1,5 @@
 require 'fastlane'
+require 'xcodeproj'
 require 'pamphlet'
 
 module CrashlyticsWrapper
@@ -8,13 +9,15 @@ module CrashlyticsWrapper
     pam = Pamphlet.instance
     groups = pam.crashlyticsGroups
     groups << args[:testers] if args[:testers] != nil
+    proj = Xcodeproj::Project.open(pam.projectPath)
+    name = proj.root_object.name
     begin
       crashlytics(
         api_token: pam.crashlyticsToken,
         build_secret: pam.crashlyticsSecret,
         groups: groups,
         notifications: true,
-        notes: "#{pam.sourcePath} Client Build - #{mode}"
+        notes: "#{name} Client Build - #{mode}"
       )
       message = "Successfully uploaded #{mode} build to Crashlytics"
       pam.messenger.appendMessage(message, :success)

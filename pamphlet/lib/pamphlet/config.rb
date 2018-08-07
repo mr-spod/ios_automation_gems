@@ -21,7 +21,7 @@ class Config
   def xcargsProduction
     args = "GCC_PREPROCESSOR_DEFINITIONS='PRODUCTION_BUILD=1"
     if @config["ios"]["enable_healthkit"] == true
-      args = "#{args} HEALTHKIT_IN_USE=1, RELEASE=1, COCOAPODS=1'"
+      args = "#{args}, HEALTHKIT_IN_USE=1, RELEASE=1, COCOAPODS=1'"
     else
       args = "#{args}'"
     end
@@ -31,7 +31,7 @@ class Config
   def xcargsStaging
     args = "GCC_PREPROCESSOR_DEFINITIONS='PRODUCTION_BUILD=0"
     if @config["ios"]["enable_healthkit"] == true
-      args = "#{args} HEALTHKIT_IN_USE=1, RELEASE=1, COCOAPODS=1'"
+      args = "#{args}, HEALTHKIT_IN_USE=1, RELEASE=1, COCOAPODS=1'"
     else
       args = "#{args}'"
     end

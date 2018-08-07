@@ -19,7 +19,7 @@ module GymWrapper
       exportMethod = "app-store"
       configuration = "Store"
       buildNumber = pam.plistHash[scheme].restoreBuildNumber
-      when BuildMode::STAGING
+    when BuildMode::STAGING
       xcargs = config.xcargsStaging
       exportMethod = "ad-hoc"
       configuration = "Release"
