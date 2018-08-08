@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
 
   s.name	= 'uploader'
-  s.version	= '1.0.2'
+  s.version	= '1.1.0'
   s.date	= '2018-06-29'
   s.summary	= "Duet Health internal iOS automation deployment stage tool"
   s.description	= "Ruby gem that uploads a Duet iOS project to our build servers."
