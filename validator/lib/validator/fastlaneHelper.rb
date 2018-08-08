@@ -17,6 +17,7 @@ module MatchWrapper
     gitBranch = fastlaneConfig['match_git_branch']
     username = fastlaneConfig['username']
     teamName = fastlaneConfig['team_name']
+    teamId = fastlaneConfig['team_id']
     begin
       ['development', 'adhoc', 'appstore'].each { |type|
         match(
@@ -25,6 +26,7 @@ module MatchWrapper
           git_branch: gitBranch,
           username: username,
           team_name: teamName,
+          team_id: teamId,
           type: type,
           clone_branch_directly: true,
           force_for_new_devices: true,

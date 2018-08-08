@@ -30,7 +30,7 @@ module CrashlyticsWrapper
 
   def executePilot(scheme, mode)
     pam = Pamphlet.instance
-    teamId = pam.configHash["scheme"].config["ios"]["team_id"]
+    teamId = pam.configHash["scheme"].config["ios"]["fastlane"]["itunes_team_id"]
     unless teamId.to_s.strip.empty?
       ipaFileName = pam.ipaFileNamesHash[scheme][mode]
       begin
@@ -48,7 +48,7 @@ module CrashlyticsWrapper
         Fastlane::UI.error message
       end
     else
-      message = "Could not execute pilot for TestFlight build of #{scheme}, #{mode}:\n'team_id' field in config dictionary not set."
+      message = "Could not execute pilot for TestFlight build of #{scheme}, #{mode}:\n'itunes_team_id' field in config dictionary not set."
       pam.messenger.appendMessage(message, :failure)
       Fastlane::UI.error message
     end
