@@ -5,7 +5,7 @@ module MatchWrapper
   module_function
 
   def syncCerts
-    schemes = Pamphlet.instance.allSchemes
+    schemes = Pamphlet.instance.configHash.keys
     schemes.each { |s| getCerts(s) }
   end
 
