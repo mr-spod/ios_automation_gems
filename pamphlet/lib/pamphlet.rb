@@ -96,7 +96,7 @@ class Pamphlet
 
   def readSchemeArgs(scheme, args)
     customConfig = args[:config_directory]
-    if customConfig != nil && @allSchemes.include?[customConfig]
+    if customConfig != nil && @allSchemes.include?(customConfig)
       @configHash.store(scheme, @configHash[customConfig])
     end
   end
