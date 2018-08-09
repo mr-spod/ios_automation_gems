@@ -53,6 +53,8 @@ class Pamphlet
 
     Xcodeproj::Project.schemes("#{@projectPath}").each { |scheme|
       @allSchemes << scheme
+      @ipaFileNamesHash.store(scheme, Hash.new)
+      
       configScheme = scheme # trim beta off of scheme for config name
       configScheme.slice!(" - Beta")
       configName = configScheme # separate variables configName and scheme because some config directories are named downcases
@@ -68,7 +70,6 @@ class Pamphlet
         @plistHash.store(scheme, PropertyList.new(plistPath))
         entitlementsPath = adjustedPath(releaseConfig.build_settings["CODE_SIGN_ENTITLEMENTS"])
         @entitlementsHash.store(scheme, Entitlements.new(entitlementsPath))
-        @ipaFileNamesHash.store(scheme, Hash.new)
       end
     }
   end
@@ -98,6 +99,9 @@ class Pamphlet
     customConfig = args[:config_directory]
     if customConfig != nil && @allSchemes.include?(customConfig)
       @configHash.store(scheme, @configHash[customConfig])
+      @plistHash.store(scheme, @plistHash[customConfig])
+      @entitlementsHash.store(scheme, @entitlementsHash[customConfig])
+      @iconsPathHash.store(scheme, @iconsPathHash[customConfig])
     end
   end
 
