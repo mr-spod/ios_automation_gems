@@ -30,7 +30,8 @@ module MatchWrapper
           type: type,
           clone_branch_directly: true,
           force_for_new_devices: true,
-          shallow_clone: true
+          shallow_clone: true,
+          readonly: true
         )
       }
     rescue => ex
