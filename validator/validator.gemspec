@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
 
   s.name	= 'validator'
-  s.version	= '1.1.0'
+  s.version	= '1.1.1'
   s.date	= '2018-06-15'
   s.summary	= "Duet Health internal iOS automation validation tool"
   s.description	= "Ruby gem that validates the contents of an iOS application project for deployment."

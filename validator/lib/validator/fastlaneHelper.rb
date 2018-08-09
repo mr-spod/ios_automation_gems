@@ -6,7 +6,7 @@ module MatchWrapper
 
   def syncCerts
     schemes = Pamphlet.instance.allSchemes
-    schemes.each { |s| executeMatch(s) }
+    schemes.each { |s| getCerts(s) }
   end
 
   def getCerts(scheme)
