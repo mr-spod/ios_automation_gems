@@ -55,7 +55,7 @@ The pamphlet object will also generate and maintain several readonly attributes 
   {
     "NURV_RECIPIENT_IDS" => ["...", "...", "..."], #id numbers
     "NURV_TOKEN" => "..." #auth token
-    "NURV_URL" => "https://nurv.duethealth.com/api_7/threads/{thread id}/messages"
+    "NURV_URL" => "{your-messenger-api}/threads/{thread id}/messages"
   }
   ```
   - creates a `Messenger` object and assigns it to the pamphlet to be accessed anywhere
